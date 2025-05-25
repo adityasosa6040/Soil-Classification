@@ -6,3 +6,6 @@ Add this as input (not upload) :
 (Download and Upload this as input) :
 # Part 1 Dataset (required)
 https://www.kaggle.com/datasets/prajwal8074/soil-classification
+
+# Required Datasets
+![Screanshot](ss1.png)
