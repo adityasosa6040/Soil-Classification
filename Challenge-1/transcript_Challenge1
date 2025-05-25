@@ -1,41 +1,52 @@
+
+Team Name :- Project Mayhem
+
+Team Members 
+  1. Prajwal Warade
+  2. Aditya Sosa
+  3. Akash Venkatesh
+  4. Shubham Malviya
+  5. Sandip Dalvi
+
+
 What's this code all about?
 
 Imagine you have a bunch of pictures of different types of soil (like Alluvial, Black, Clay, and Red). This code is trying to teach a computer to automatically tell which type of soil is in a new picture. It's a typical image classification task using a smart technique called deep learning.
 
 Here's the game plan in simple terms:
 
-Clean Up :
+1.Clean Up :
 
-First, it clears out any old files from its working space to start fresh.
-Then, it loads all the necessary digital tools (libraries) for handling data, images, and building the learning model.
-
-
-Prepare the Images (Data Preprocessing):
-
-It knows there are four types of soil and gives each a number (0 for Alluvial, 1 for Black, etc.).
-It sets up a system to load images and their correct soil type labels.
-Important Step: All images are resized and cropped to a standard square size (224x224 pixels). This is done once at the beginning to save time later.
-It defines how to prepare images for the model: convert them into a format the model understands and "normalize" them (adjusting pixel values to a standard range).
-Making the Model Smarter (Augmentation): It also prepares to randomly flip, rotate, or slightly blur some training images. This helps the model learn better and not get fooled by slight variations in new pictures.
-The labeled pictures are split into a main training set (to teach the model) and a smaller validation set (to check how well it's learning).
-Finally, it creates "data loaders" that efficiently feed batches of these prepared images to the model during training.
+  First, it clears out any old files from its working space to start fresh.
+  Then, it loads all the necessary digital tools (libraries) for handling data, images, and building the learning model.
 
 
-Choose and Set Up the Model:
+2.Prepare the Images (Data Preprocessing):
 
-It uses a well-known pre-trained model called "ResNet18."  and we'll just fine-tune them for soil.
-It sets up the model to run on the powerful graphics card (GPU) for speed.
-It defines how to measure the model's mistakes (the "loss function," CrossEntropyLoss).
-Quick Check: It loads a previously saved "best model" (if one exists from an earlier training session) and tests it on all the training data to see its current F1 score (a measure of accuracy for each soil type).
+  It knows there are four types of soil and gives each a number (0 for Alluvial, 1 for Black, etc.).
+  It sets up a system to load images and their correct soil type labels.
+  Important Step: All images are resized and cropped to a standard square size (224x224 pixels). This is done once at the beginning to save time later.
+  It defines how to prepare images for the model: convert them into a format the model understands and "normalize" them (adjusting pixel values to a standard range).
+  Making the Model Smarter (Augmentation): It also prepares to randomly flip, rotate, or slightly blur some training images. This helps the model learn better and not get fooled by slight variations in new pictures.
+  The labeled pictures are split into a main training set (to teach the model) and a smaller validation set (to check how well it's learning).
+  Finally, it creates "data loaders" that efficiently feed batches of these prepared images to the model during training.
 
 
-Teach the Model (Training Loop):
+3.Choose and Set Up the Model:
 
-It sets up an "optimizer" (Adam), which is the tool that helps the model learn by adjusting its internal settings based on errors.
-The training happens in cycles called "epochs." In each epoch:
-Training Phase: The model looks at batches of training images (with the random augmentations applied). It makes a prediction, the error is calculated, and the optimizer adjusts the model to reduce that error.
-Validation Phase: After seeing all training images for that epoch, the model is tested on the validation set (without augmentations, to get a fair score).
-The code prints out how much error (loss) the model made on both training and validation sets.
-Save the Best: If the model did better on the validation set than in previous epochs, its current state is saved as "best_model.pth."
-Early Stopping: If the model doesn't improve on the validation set for a certain number of epochs (here, 10), the training stops automatically to save time and prevent the model from "overthinking" and performing worse on new images.
-Essentially, the script takes raw soil images, processes them, uses a pre-trained neural network, and then fine-tunes that network through a cycle of training and validation, saving the best performing version along the way.
+  It uses a well-known pre-trained model called "ResNet18."  and we'll just fine-tune them for soil.
+  It sets up the model to run on the powerful graphics card (GPU) for speed.
+  It defines how to measure the model's mistakes (the "loss function," CrossEntropyLoss).
+  Quick Check: It loads a previously saved "best model" (if one exists from an earlier training session) and tests it on all the training data to see its current F1 score (a measure of accuracy for each soil type).
+
+
+4.Teach the Model (Training Loop):
+
+  It sets up an "optimizer" (Adam), which is the tool that helps the model learn by adjusting its internal settings based on errors.
+  The training happens in cycles called "epochs." In each epoch:
+  Training Phase: The model looks at batches of training images (with the random augmentations applied). It makes a prediction, the error is calculated, and the optimizer adjusts the model to reduce that error.
+  Validation Phase: After seeing all training images for that epoch, the model is tested on the validation set (without augmentations, to get a fair score).
+  The code prints out how much error (loss) the model made on both training and validation sets.
+  Save the Best: If the model did better on the validation set than in previous epochs, its current state is saved as "best_model.pth."
+  Early Stopping: If the model doesn't improve on the validation set for a certain number of epochs (here, 10), the training stops automatically to save time and prevent the model from "overthinking" and performing worse on new images.
+  Essentially, the script takes raw soil images, processes them, uses a pre-trained neural network, and then fine-tunes that network through a cycle of training and validation, saving the best performing version along the way.
