@@ -1,2 +1,2 @@
 # Transfer Learning + One-Class SVM
-- Requires Part 1 data
+- Requires Part 1 Dataset
