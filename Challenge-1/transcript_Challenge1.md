@@ -42,3 +42,6 @@ Team Members
 - Uses GPU acceleration for faster training and augmentations.  
 - ResNet18 with pretrained weights and fine-tuning works well for small datasets.  
 - Final predictions are exported for competition submission.
+
+# Leaderboard
+- F1 Score :- 0.9285
