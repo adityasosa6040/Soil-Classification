@@ -48,4 +48,4 @@ Team Members
 ```Preprocess → Extract Features → Train SVM → Predict → Save Results```
 
 # Leaderboard
-- F1 Score :- 0.8288
+- Final Score :- 0.8435
