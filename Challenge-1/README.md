@@ -1,3 +1,4 @@
+# Transfer Learning using pretrained resnet18 CNN model
 
 Team Name :- Project Mayhem
 
